@@ -1,0 +1,116 @@
+<!-- 
+	This is the template for ve_guestbook in the kubrick template
+
+	$Id: kubrick_ve_guestbook.tmpl,v 1.6 2005/08/23 22:26:48 ingorenner Exp $ 
+
+-->
+
+<!-- ###TEMPLATE_FORM### begin
+
+The guestbook form for a new frontend entry
+
+Following markers will be substituted:
+
+###FORM_FIRSTNAME### 	Firstname
+###FORM_SURNAME###		Surname
+###FORM_EMAIL### 		E-Mail
+###FORM_HOMEPAGE### 	Website
+###FORM_PLACE### 		Place
+###FORM_ENTRY### 		Message
+
+-->
+<h2>###BLIX_LEAVE_COMMENT###</h2>
+
+<form action="###ACTION_URL###" method="post" id="commentform">
+<fieldset>
+	<p><label for="author">###BLOG_NAME###</label> <input type="text" name="tx_veguestbook_pi1[firstname]" id="author" value="###VALUE_FIRSTNAME###" tabindex="1" /> <em>###BLIX_REQUIRED###</em></p>
+	<p><label for="email">###BLOG_MAIL###</label> <input type="text" name="tx_veguestbook_pi1[email]" id="email" value="###VALUE_EMAIL###" tabindex="2" /> <em>###BLIX_HIDDEN###</em></p>
+	<p><label for="url">###BLOG_HOMEPAGE###</label> <input type="text" name="tx_veguestbook_pi1[homepage]" id="url" value="###VALUE_HOMEPAGE###" tabindex="3" /></p>
+
+
+	<p><label for="comment">###BLIX_COMMENT###</label> <textarea name="tx_veguestbook_pi1[entry]" id="comment" cols="45" rows="10" tabindex="4">###VALUE_ENTRY###</textarea></p>
+	<p>
+	<input type="hidden" name="id" value="###PID###" />
+	<input type="hidden" name="tx_veguestbook_pi1[submitted]" value="1" />
+	<input type="hidden" name="tx_timtab[remember_visitor]" value="1" /> 
+	
+	<input type="submit" name="submit" value="###FORM_SUBMIT###" class="button" tabindex="5" /></p>
+
+</fieldset>
+</form>
+
+<p><a href="###BLOG_TRACKBACK_URL###">###BLIX_TRACKBACK###</a> <!-- &nbsp;|&nbsp; <a href='http://www.wordpress.loc/?feed=rss2&amp;p=13'>Subscribe to the comments via RSS Feed</a> --> </p> 
+
+</div> <!-- /comments -->
+<!-- ###TEMPLATE_FORM### end -->
+
+<!-- ###TEMPLATE_LIST### begin
+Teasing the gustbook
+
+Following markers will be substituted:
+
+###GUESTBOOK_FIRSTNAME### 	Firstname (Entry)
+###GUESTBOOK_SURNAME###		Surname (Entry)
+###GUESTBOOK_EMAIL_URL### 	E-Mail URL (Entry)
+###GUESTBOOK_EMAIL### 		E-Mail including spam protection if activated (Entry)
+###GUESTBOOK_HOMEPAGE### 	Website (Entry)
+###GUESTBOOK_PLACE### 		Place (Entry)
+###GUESTBOOK_ENTRY### 		Message (Entry)
+
+And the field names...
+
+###FORM_FIRSTNAME### 		Firstname
+###FORM_SURNAME###			Surname
+###FORM_EMAIL### 			E-Mail
+###FORM_HOMEPAGE### 		Website
+###FORM_PLACE### 			Place
+###FORM_ENTRY### 			Message
+-->
+
+<!-- comments ................................. -->
+<div id="comments">
+ 
+<h2>###BLOG_COMMENTS_COUNT### ###BLOG_TEXT_COMMENTS### ###BLIX_ADD_YOUR_COMMENT###</h2> 
+
+<ul>
+<!-- ###CONTENT### begin
+	  This is the part of the template substituted with the list of entries: 
+-->
+
+	<!-- ###ENTRY### begin 
+		Template for a single item 
+	-->
+	<li id="comment-###BLOG_COMMENT_NUM###" class="comment">
+	<p class="header"><strong>###BLOG_COMMENT_NUM###.</strong>
+	###BLOG_COMMENT_GRAVATAR### 
+	###BLOG_COMMENTER_NAME### &nbsp;|&nbsp; ###GUESTBOOK_DATE###</p>
+	<p>###GUESTBOOK_ENTRY###</p>	
+	</li>
+	<!-- ###ENTRY### end-->
+
+<!-- ###CONTENT###  end -->
+</ul>
+<!-- ###TEMPLATE_LIST### end -->
+
+
+
+<!-- ###TEMPLATE_NO_ENTRIES### begin
+No entries found :-(
+
+Following markers will be substituted:
+
+###GUESTBOOK_FIRSTNAME### 	Firstname
+###GUESTBOOK_SURNAME###		Surname
+###GUESTBOOK_EMAIL_URL### 	E-Mail (URL)
+###GUESTBOOK_EMAIL### 		E-Mail including spam protection if activated
+###GUESTBOOK_HOMEPAGE### 	Website
+###GUESTBOOK_PLACE### 		Place
+###GUESTBOOK_ENTRY### 		Message
+
+-->
+<div id="comments">
+ 
+
+<!-- ###TEMPLATE_NO_ENTRIES### end -->
+
+
